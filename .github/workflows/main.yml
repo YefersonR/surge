@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Deploy to practica3.surge.sh
+    name: Deploy to surge 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -13,4 +13,3 @@ jobs:
           node-version: 16
       - run: npm install -g surge
       - run: surge . ${{ secrets.SURGE_LOGIN }} --token ${{ secrets.SURGE_TOKEN }}
-          
